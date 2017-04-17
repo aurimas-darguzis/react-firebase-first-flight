@@ -11,7 +11,9 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log('i did mount')
+    database.ref().on('value', () => {
+      console.log('the data changed')
+    })
   }
 
   render () {
